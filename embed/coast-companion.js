@@ -43,4 +43,4 @@
     toggleBtn.style.color = 'white';
     document.body.appendChild(toggleBtn);
 
-})('http://localhost:3000', true, '#007bff');
+})('https://thed3vel0per.github.io/CoastCompanionDemo/chatbot/', true, '#007bff');
