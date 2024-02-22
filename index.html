@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- STEP 1. EDIT THE FOLLOWING sitesContent DEFINITION -->
+    <script>
+        const siteContent = {
+          version: "February 28th, 2024",
+          chatbotSampleLink: "chatbot-sample.html",
+          adminPanelLink: "admin-panel.html"
+        };
+      </script>
+      <!-- STEP 2. EDIT THE notes-content.html FILE FOR NOTES BOX -->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/png" href="favicon.png">
+<title>Coast Companion Demo</title>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="summary" class="coast-companion">
+            coast<span style="font-weight: 200;">companion — DEMO</span>
+        </a>
+        <span id="version" style="margin-right: 25px">
+            <b>VERSION: edit json to add date</b>
+        </span>
+    </nav>
+    <div class="demo-content">
+        <div style="padding-top: 200px;"></div>
+        <h2 style="margin-bottom: 5px;">Hi Coast Capital Team, click on the buttons below to view our demos!</h2>
+        <p style="margin-top: 0px;">Made with ♡ by <i>The Backbenchers</i>.</p>
+        <a target="_blank" id="button-simple-site" href="embed/blank.html" class="demo-button" style="width: 300px;">Chatbot on Simple Site</a>
+        <a target="_blank" id="button-cc-site" href="embed/CC.html" class="demo-button" style="width: 300px;">Chatbot on Coast Capital Site</a>
+        <a target="_blank" id="button-wiki-site" href="embed/wikipedia.html" class="demo-button" style="width: 300px;">Chatbot on Wikipedia Page</a>
+        <a target="_blank" id="button-admin-panel" href="https://dev.d3e8utbvtcc4kx.amplifyapp.com/" class="demo-button" style="width: 300px;">Admin Panel</a>
+        
+
+        <div class="notes-section">
+            <h3>Demo Notes</h3>
+            <div class="notes" id="notesContent">
+                <iframe src="notes-content.html" frameborder="0" style="width:100%; min-height:100px;"></iframe>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2024 <i>CoastCompanion</i> developed by <i>The BackBenchers</i></p>
+            <p>Disclaimer: This is a demo version that not be used for regular use.</i></p>
+        </div>
+        
+    </div>
+
+    <script>
+        // This sets the version number, chatbot sample link, admin panel link, and notes content
+        // so that Devam (or any contributer) can update the content without touching the HTML.
+        document.getElementById('version').innerHTML = `<b>VERSION:</b> ${siteContent.version}`;
+    </script>
+      
+</body>
+</html>
