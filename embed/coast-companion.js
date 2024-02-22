@@ -43,4 +43,4 @@
     toggleBtn.style.color = 'white';
     document.body.appendChild(toggleBtn);
 
-})('http://localhost:3000', true, '#007bff');
+})('https://chatbot.d2z99dzbnhjdr2.amplifyapp.com', true, '#007bff');
