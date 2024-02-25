@@ -4,7 +4,7 @@
     var iframe = document.createElement('iframe');
     iframe.src = embedUrl;
     iframe.frameBorder = '0';
-    iframe.style.height = '400px';
+    iframe.style.height = '600px';
     iframe.style.width = '400px';
     iframe.style.borderRadius = '2em';
     iframe.style.position = 'fixed';
