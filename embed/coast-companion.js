@@ -6,19 +6,20 @@
     iframe.frameBorder = '0';
     iframe.style.height = '600px';
     iframe.style.width = '400px';
-    iframe.style.borderRadius = '2em';
+    iframe.style.borderRadius = '1em';
     iframe.style.position = 'fixed';
-    iframe.style.bottom = '10px';
+    iframe.style.bottom = '35px';
     iframe.style.right = '70px';
     iframe.style.display = 'none';
     iframe.style.zIndex = '100';
+    iframe.style.boxShadow = 'rgba(0, 0, 0, 0.3) 0px 2px 4px';
     document.body.appendChild(iframe);
     
     // Insert the Show/Hide button
     var toggleBtn = document.createElement('button');
     var hidden = defaultHidden;
     iframe.style.display = hidden ? 'none' : 'block';
-    toggleBtn.innerHTML = '<b>C</b>C';
+    toggleBtn.innerHTML = '<img src="assets/cc-logo.png" width="28"/>';
     toggleBtn.onclick = function () {
         hidden = !hidden;
         iframe.style.display = hidden ? 'none' : 'block';
@@ -30,7 +31,7 @@
         toggleBtn.style.backgroundColor = buttonColor;
     };
     toggleBtn.style.position = 'fixed';
-    toggleBtn.style.bottom = '10px';
+    toggleBtn.style.bottom = '20px';
     toggleBtn.style.right = '10px';
     toggleBtn.style.height = '50px';
     toggleBtn.style.width = '50px';
