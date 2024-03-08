@@ -1,4 +1,68 @@
 <!-- You can edit the HTML here and it will go to the main page under the notes box. -->
-<p>
-    Username and Password for the Admin Panel: "admin". <br/><br/>
-</p>
+<div>
+    <div id="'general_notes">
+        <h2>General Notes:</h2>
+        There are two logins for the admin panel. 
+        <ul>
+            <li>Username: admin | Password: Password@1</li>
+            <li>Username: TestAdmin | Password: Testing@2</li>
+        </ul>
+    </div>
+
+    <div id="'v0.2.0">
+        <h2 id="release-notes-">Release Notes:</h2>
+        <h3 id="version-0-2-0">Version 0.2.0</h3>
+        <h4 id="revamped-chatbot-ui-">Revamped Chatbot UI:</h4>
+        <p>We have greatly improved the style of our chatbot to make it more appealing and to make it more clear to the
+            user
+            that they are interacting with a chatbot. We have also added UI elements with placeholders for upcoming
+            features. </p>
+        <p>Changes:</p>
+        <ul>
+            <li>Added initial message introducing the chatbot</li>
+            <li>Fixed send button not receiving a response from chatbot</li>
+            <li>Modernized the user interface by introducing color gradients and including a Coast Companion avatar
+                beside
+                all chatbot messages</li>
+            <li>Added a chatbot header that includes the Coast Companion icon, name, and online status.</li>
+            <li>Added settings cog icon to toggle a dropdown menu (this menu will include options for font size changes
+                in a
+                future update)</li>
+            <li>Added three dots below every chat message to display links to the sources used in the chatbot answer
+                (working links will be included in a future update)</li>
+        </ul>
+        <h4 id="admin-panel-accounts-">Admin Panel Accounts:</h4>
+        <p>We have implemented admin accounts using Amazon Cognito. This will allow us to have multiple admin users and
+            manage accounts through AWS. Having Amazon Cognito accounts allows us to have individual credentials for
+            database and knowledge base access which allows us to audit changes made by admins to the knowledge base.
+        </p>
+        <p>Changes:</p>
+        <ul>
+            <li>Connected login page to Amazon Cognito</li>
+            <li>Created two admin accounts <ul>
+                    <li>Username: admin | Password: Password@1</li>
+                    <li>Username: TestAdmin | Password: Testing@2</li>
+                </ul>
+            </li>
+            <li>Set up protected routes to block access to pages without logging in</li>
+        </ul>
+        <h4 id="stronger-chatbot-model-">Stronger Chatbot Model:</h4>
+        <p>We have strengthened our chatbot model to improve reliability. We have made various changes to reduce
+            hallucinations and return more accurate response times. </p>
+        <p>Changes:</p>
+        <ul>
+            <li>Confined responses to CCS related responses only</li>
+            <li>Improved Knowledge base look up</li>
+            <li>Improved response coherency</li>
+            <li>Responds to ambiguous responses in context of CCS</li>
+            <li>Gave model context so it can understand that it is a chatbot for CCS</li>
+        </ul>
+        <h4 id="known-issues-">Known Issues:</h4>
+        <p>The following are known issues we have discovered but have not fixed in this current version:</p>
+        <ul>
+            <li>Chatbot is overtuned to only respond to questions about onboarding. May not respond to greetings like
+                &quot;hello&quot; when it should be expected to.</li>
+            <li>Response times for the chatbot are still being improved. </li>
+        </ul>
+    </div>
+</div>
