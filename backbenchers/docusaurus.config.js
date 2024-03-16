@@ -114,7 +114,7 @@ const config = {
             activateBaseRegex: '/dev/',
           },
           { to: '/team', label: 'Team', position: 'left' },
-          { to: '/blog', label: 'The Backbench', position: 'left' },
+          { to: '/blog', label: 'The Back Bench', position: 'left' },
           {
             href: 'https://github.com/CPSC319-2023/Team-4-CCS-',
             label: 'GitHub',
@@ -165,7 +165,7 @@ const config = {
                 to: '/team',
               },
               {
-                label: 'The Backbench',
+                label: 'The Back Bench',
                 to: '/blog',
               },
               {
