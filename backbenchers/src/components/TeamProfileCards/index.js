@@ -46,7 +46,7 @@ const ProfileCard = ({ name, pictureLink, roles, websiteLink, linkedInLink }) =>
       </div>
       <div className={styles.linksContainer}>
         {websiteLink && (<Link href={websiteLink} color="inherit" target="_blank"> <LinkIcon /> </Link>)}
-        {websiteLink && (<Link href={websiteLink} color="inherit" target="_blank"> <LinkedInIcon /> </Link>)}
+        {linkedInLink && (<Link href={linkedInLink} color="inherit" target="_blank"> <LinkedInIcon /> </Link>)}
       </div>
     </div>
   );
