@@ -55,7 +55,7 @@ function ChatbotModalButton() {
             You are accessing the <span style={{ color: "#0050F8" }}>CoastCompanion</span> Chatbot Demo
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }} style={{ fontFamily: "Coast Sans" }}>
-            By continuing, you acknowledge that CoastCompanion is <u>not</u> a product or service<br />offered by Coast Capital Savings®.
+            By continuing, you acknowledge that CoastCompanion is <u>not</u> a product or service offered by Coast Capital Savings®.
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }} style={{ fontFamily: "Coast Sans" }}>
             To continue, select one of the pages for the Demo:
@@ -103,7 +103,7 @@ function AdminPanelModalButton() {
             You are accessing the <span style={{ color: "#0050F8" }}>CoastCompanion</span> Admin Panel Demo
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }} style={{ fontFamily: "Coast Sans" }}>
-            By continuing, you acknowledge that CoastCompanion is <u>not</u> a product or service<br />offered by Coast Capital Savings®.
+            By continuing, you acknowledge that CoastCompanion is <u>not</u> a product or service offered by Coast Capital Savings®.
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }} style={{ fontFamily: "Coast Sans" }}>
             To continue, click the button below:
