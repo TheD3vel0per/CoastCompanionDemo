@@ -2,7 +2,7 @@
 // put the newest deployed version here
 // in "0.x.x" format
 
-const version = "0.0.2"
+const version = "0.2.0"
 
 
 

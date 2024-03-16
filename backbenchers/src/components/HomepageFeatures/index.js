@@ -130,7 +130,7 @@ export default function HomepageFeatures() {
       <div className="container" id="demo-container">
 
         <Admonition type="info" title="new release!">
-          <p>Pre-Release Version {preReleaseVersion} has been released. For more information, please refer to the <Link to={`dev/release-notes/${preReleaseVersion}`}>Release Notes</Link></p>
+          <p>Pre-Release Version {preReleaseVersion} has been released. For more information, please refer to the <Link to={`/dev/release-notes/${preReleaseVersion}`}>Release Notes</Link></p>
         </Admonition>
 
         <div className={styles.row}>
