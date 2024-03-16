@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://thed3vel0per.github.io/CoastCompanionDemo/blog</id>
+    <title>CoastCompanion Blog</title>
+    <updated>2024-02-21T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://thed3vel0per.github.io/CoastCompanionDemo/blog"/>
+    <subtitle>CoastCompanion Blog</subtitle>
+    <icon>https://thed3vel0per.github.io/CoastCompanionDemo/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Work In Progress 1]]></title>
+        <id>https://thed3vel0per.github.io/CoastCompanionDemo/blog/wip-1</id>
+        <link href="https://thed3vel0per.github.io/CoastCompanionDemo/blog/wip-1"/>
+        <updated>2024-02-21T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[As we embark on this exciting journey to create Coast Companion, it's essential to note that the details presented here are part of our ongoing work in progress report. Our team, the Backbenchers, is currently in the early stages of development, and this introduction serves as a snapshot of our initial objectives and commitment. As we delve deeper into the project, this report will provide a comprehensive overview of our progress, challenges faced, and the innovative solutions we implement. We appreciate the opportunity to share our journey with you and look forward to updating you on the evolution of Coast Companion.]]></summary>
+        <content type="html"><![CDATA[<p>As we embark on this exciting journey to create Coast Companion, it's essential to note that the details presented here are part of our ongoing work in progress report. Our team, the Backbenchers, is currently in the early stages of development, and this introduction serves as a snapshot of our initial objectives and commitment. As we delve deeper into the project, this report will provide a comprehensive overview of our progress, challenges faced, and the innovative solutions we implement. We appreciate the opportunity to share our journey with you and look forward to updating you on the evolution of Coast Companion.</p>
+<p>Here is the demo link for our application: <a href="https://thed3vel0per.github.io/CoastCompanionDemo" target="_blank" rel="noopener noreferrer">https://thed3vel0per.github.io/CoastCompanionDemo</a></p>
+<p>We made some progress but we were set back by our AWS setup issues, we were pushed back 1 to 2 weeks behind expected development progress</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="we-aimed-to-achieve-the-following-goals">We aimed to achieve the following goals:<a href="https://thed3vel0per.github.io/CoastCompanionDemo/blog/wip-1#we-aimed-to-achieve-the-following-goals" class="hash-link" aria-label="Direct link to We aimed to achieve the following goals:" title="Direct link to We aimed to achieve the following goals:">​</a></h3>
+<ul>
+<li>Interface for Chatbot Interaction: The user interface should have a text box to send questions to the chatbot and receive answers.</li>
+<li>Interface to Provide Feedback for Chatbot’s Answers: After the chatbot answers a question, it should offer users an opportunity to give feedback on the chatbot's response. These responses will help fine-tune future responses to similar queries.</li>
+<li>Interface to Add/Remove/Update the Chatbot Information: The chatbot's answers should be capable of being changed by editing prompts.</li>
+<li>Interface to see Chatbot’s Performance: User’s response rating, chatbot’s response times, and user satisfaction should be viewable to show the chatbot's performance and viability.</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="our-progress-on-our-goals">Our Progress on our Goals<a href="https://thed3vel0per.github.io/CoastCompanionDemo/blog/wip-1#our-progress-on-our-goals" class="hash-link" aria-label="Direct link to Our Progress on our Goals" title="Direct link to Our Progress on our Goals">​</a></h3>
+<ul>
+<li>Interface for Chatbot Interaction: This is complete and you can easily put a script tag on any website to add Coast Companion to your website.</li>
+<li>Interface to Provide Feedback for Chatbot’s Answers: This is incomplete. While we have the administrative dashboard to see performance metrics on the Chatbot, we are still unable to deliver feedback to the chatbot immediately.</li>
+<li>Interface to Add/Remove/Update the Chatbot Information: This is incomplete. The interface is ready to be used but still needs to be connected to the backend.</li>
+<li>Interface to see Chatbot’s Performance: This is incomplete. The interface is ready but still needs to be connected to the backend.</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="difficulties-we-faced">Difficulties We Faced<a href="https://thed3vel0per.github.io/CoastCompanionDemo/blog/wip-1#difficulties-we-faced" class="hash-link" aria-label="Direct link to Difficulties We Faced" title="Direct link to Difficulties We Faced">​</a></h3>
+<p>We encountered technical difficulties setting up the project and building our first iteration.</p>
+<ul>
+<li><strong>AWS Permissions Blockers:</strong> Issues with AWS permissions emerged as significant blockers, demanding meticulous attention to detail and troubleshooting to ensure a smooth project progression.</li>
+<li><strong>Lex Limitation:</strong> Initially considered for integration, Lex was found to lack Language Model capabilities, prompting us to reconsider and adjust our technology stack accordingly.</li>
+<li><strong>Kendra Cost Concerns:</strong> Implementation of Kendra, a potential solution, proved more expensive than anticipated, necessitating a reassessment of budgetary considerations and exploration of cost-effective alternatives.</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="deviations">Deviations<a href="https://thed3vel0per.github.io/CoastCompanionDemo/blog/wip-1#deviations" class="hash-link" aria-label="Direct link to Deviations" title="Direct link to Deviations">​</a></h3>
+<ul>
+<li><strong>Deviations in Technology Stack:</strong> In the development of Coast Companion, we opted for deviations from the initially considered LLama2 or Lex/Kendra solutions.</li>
+<li><strong>Claude Embedding Model Integration:</strong> Instead of the initially planned options, we chose to utilize the Claude embedding model. This decision was made based on its suitability for our specific project requirements and objectives.</li>
+<li><strong>Model Agent Integration:</strong> To seamlessly integrate various embedding models with our Language Model (LLM), we implemented a model agent. This agent serves as the glue that binds different embedding models together, ensuring cohesive functionality and optimal performance within Coast Companion.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="our-next-steps">Our Next Steps<a href="https://thed3vel0per.github.io/CoastCompanionDemo/blog/wip-1#our-next-steps" class="hash-link" aria-label="Direct link to Our Next Steps" title="Direct link to Our Next Steps">​</a></h2>
+<ul>
+<li><strong>Bug Fixes:</strong> Conduct thorough testing and debugging to identify and resolve any existing bugs or issues within the system.</li>
+<li><strong>Finish Backend Linking for Admin Panel:</strong> Complete the backend integration for the Admin Panel to ensure seamless functionality and accessibility for administrative tasks.</li>
+<li><strong>Implement Rating Delivery Mechanism:</strong> Develop and implement the frontend components required for the rating feature, ensuring a user-friendly interface and experience.</li>
+<li><strong>Lower Response Time:</strong> Conduct performance analysis and implement optimizations to lower response time, enhancing the overall user experience and ensuring Coast Companion operates with optimal efficiency. Evaluate and refine both backend and frontend components to achieve a more responsive system.</li>
+<li><strong>Add Citations to Chatbot:</strong> Enhance the credibility of Coast Companion by implementing a citation display feature in the chatbot responses. This addition ensures transparency and allows users to view the sources of information, promoting trust and reliability in the information provided by the chatbot.</li>
+</ul>
+<p>Looking foward for more progress! <br>
+<strong>The Backbenchers</strong></p>]]></content>
+        <author>
+            <name>Devam</name>
+            <uri>https://github.com/TheD3vel0per</uri>
+        </author>
+        <category label="WIP" term="WIP"/>
+    </entry>
+</feed>
