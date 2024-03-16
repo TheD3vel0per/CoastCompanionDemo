@@ -6,6 +6,7 @@ import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import Heading from '@theme/Heading';
 import styles from './index.module.css';
 import CCLogo from '@site/static/img/coastcompanion-logo-1.svg';
+import TeamProfileCards from '@site/src/components/TeamProfileCards';
 
 
 function Hero() {
@@ -13,7 +14,7 @@ function Hero() {
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
-        <p className={styles.heroTitle}>the development team for CoastCompanion</p>
+        <p className={styles.heroBannerTitle}>The BackBenchers - developers of CoastCompanion</p>
       </div>
     </header>
   );
@@ -27,7 +28,7 @@ export default function Team() {
       description="Backbenchers Team Profile">
       <Hero />
       <main className={styles.main}>
-        <p>There will be a team profile here... Things are coming soon! We promise!!</p>
+        <TeamProfileCards />
       </main>
     </Layout>
   );
