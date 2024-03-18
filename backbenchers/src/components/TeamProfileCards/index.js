@@ -13,7 +13,7 @@ const ProfileCard = ({ name, pictureLink, roles, websiteLink, linkedInLink }) =>
   }
 
   if (pictureLink === undefined || pictureLink === null || pictureLink === "") {
-    pictureLink = "/img/ubc-logo.png";
+    pictureLink = "/CoastCompanion/img/ubc-logo.png";
   }
 
   let chips = <>{<Chip label="Backbencher" sx={{color: "var(--ifm-color-primary-light)"}}/>}</>;
