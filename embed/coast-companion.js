@@ -1,9 +1,16 @@
 (function (embedUrl, defaultHidden, buttonColor, showToggleBtnPrompt) {
+(function (embedUrl, defaultHidden, buttonColor, showToggleBtnPrompt) {
 
     // Insert iFrame into the Page
     var iframe = document.createElement('iframe');
     iframe.src = embedUrl;
     iframe.frameBorder = '0';
+    iframe.style.minHeight = '600px';
+    iframe.style.minWidth = '400px';
+    iframe.id = 'chatbot-iframe';
+    iframe.style.width = "400px"
+    iframe.style.height = "600px"
+    iframe.style.borderRadius = '10px';
     iframe.style.minHeight = '600px';
     iframe.style.minWidth = '400px';
     iframe.id = 'chatbot-iframe';
@@ -16,7 +23,10 @@
     iframe.style.display = 'none';
     iframe.style.zIndex = '10000';
     iframe.style.boxShadow = 'rgba(0, 52, 164, 0.4) 0px 4px 12px';
+    iframe.style.zIndex = '10000';
+    iframe.style.boxShadow = 'rgba(0, 52, 164, 0.4) 0px 4px 12px';
     document.body.appendChild(iframe);
+
 
     // Insert the Show/Hide button
     var toggleBtn = document.createElement('button');
@@ -46,6 +56,7 @@
     toggleBtn.style.backgroundColor = buttonColor;
     toggleBtn.style.backgroundColor = buttonColor;
     toggleBtn.style.zIndex = '100';
+    toggleBtn.style.cursor = 'pointer';
     toggleBtn.style.cursor = 'pointer';
     toggleBtn.style.color = 'white';
     document.body.appendChild(toggleBtn);

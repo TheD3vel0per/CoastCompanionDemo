@@ -1,4 +1,193 @@
 <!-- You can edit the HTML here and it will go to the main page under the notes box. -->
-<p>
-    Username and Password for the Admin Panel: "admin". <br/><br/>
-</p>
+<div>
+    <div id="general_notes">
+        <h2 id="general-notes-">General Notes:</h2>
+        <ul>
+            <li>There are two logins for the admin panel.
+                <ul>
+                    <li>Username: admin | Password: Password@1</li>
+                    <li>Username: TestAdmin | Password: Testing@2</li>
+                    <li>Other accounts coming soon</li>
+                </ul>
+            </li>
+            <li>Add dataset functionality is almost complete and will be in the next version.</li>
+        </ul>
+    </div>
+
+    <div id="release_notes">
+        <h2 id="release-notes-">Release Notes:</h2>
+        <div id="v0.3.0">
+            <h3 id="version-0-3-0-release-notes">Version 0.3.0 - Release Notes</h3>
+            <h4 id="revamped-admin-panel-ui-">Revamped Admin Panel UI:</h4>
+            <p>We have greatly improved the style of our Admin Panel UI to make it more user-friendly. The new and
+                improved
+                design is focused on the feedback we received from the mid-term progress report and is centered around
+                our
+                (Sponsor and Us) vision of a CoastCompanion admin&#39;s workflow.</p>
+            <h5 id="log-in-page">Log-in Page</h5>
+            <p>The Log-in page has been reformed to be consistent with Coast Capital&#39;s UI layout design. To avoid
+                confusion
+                with <em>Coast Online Banking</em>, an online banking service offered by Coast Captial Savings, we have
+                added
+                the text &quot;Looking for Coast Companion Online Banking?&quot;.</p>
+            <p>The page also features a login form that is a <em>Two-step Login Process</em>. It is required that the
+                user
+                first
+                puts in their username, then put in their password.</p>
+            <h5 id="summary-page">Summary Page</h5>
+            <p>The Summary page has been restructured to show key statistics at the top, and &#39;flowing&#39; to the
+                bottom
+                to
+                show detailed analytics-ready information at the bottom. The admin user is able to quickly view the
+                statistics
+                of yesterday, allowing them to quickly review the status of the Chatbot. Below the summary, there is a
+                reports
+                section which allows users to view and export KPIs such as (1) Session Count, (2) Average Response Time,
+                and
+                (3)
+                Average Rating, aggregated over a user-selected interval. Finally, the page supports visualization for
+                these
+                KPIs, directly below the reports section for an intuitive user-friendly layout.</p>
+            <h5 id="knowledge-base-portal">Knowledge Base Portal</h5>
+            <p>The Knowledge Base page is now a central place for CoastCompanion administrators to unleash powerful
+                actions
+                to
+                configure and manage the CoastCompanion chatbot. The user is able to view active and archived sources,
+                add
+                sources, and view a source in detail. To include sufficient amount of control features for the admin
+                user,
+                we
+                have opted for additional pages instead of a modal. </p>
+            <p>We have also added the feature of adding Categories to sources. The user can add, remove, assign,
+                unassign a
+                category from a KB source. This makes it easier for CoastCompanion admins to manage a large quantity of
+                sources.
+            </p>
+            <p>Additional functionalities include (1) Record keeping or <em>Audit Support</em>, and (2) Usage Reports.
+                These
+                are
+                in the Knowledge Base Source Detail pages.</p>
+            <h4 id="chatbot-improvements-">Chatbot Improvements:</h4>
+            <p>Building upon the UI foundations laid in the previous release, we&#39;ve introduced several enhancements
+                to
+                improve user experience and functionality. We&#39;ve added citations to provide more information to the
+                users
+                and message timestamps for better context. We have also added the ability to resize the chatbot window
+                for
+                improved readability. We are also introducing ability to give feedback on chatbot responses that can
+                help
+                improve the chatbot.</p>
+            <h5 id="feedback">Feedback</h5>
+            <p>The chatbot feedback feature is now fully functional. Users can rate responses by pressing the thumbs up
+                or
+                thumbs down button at the top right corner of every message. Additionally, users that are not satisfied
+                with
+                a
+                given response will be presented with the option to leave a comment.</p>
+            <h5 id="citations">Citations</h5>
+            <p>Data reference links are now available under every response by clicking on the three dots below a chatbot
+                text
+                bubble. This provides users with the opportunity to dive deeper into a certain topic or learn more about
+                where
+                this information was gathered from. The sources can be accessed by clicking the 3 dots under each
+                chatbot
+                response. The citation links are set up using Amazon CloudFront allowing for fast access to the sources
+                needed.
+            </p>
+            <h5 id="user-experience">User Experience</h5>
+            <p>This release comes with many user experience improvements. </p>
+            <ul>
+                <li>The chatbot can be expanded and shrunk by pressing the resize button on the top left corner. This
+                    tailors
+                    the experience to best serve the needs and preferences of the user. </li>
+                <li>There is now a timestamp under each message for transparency and record keeping.</li>
+                <li>The chatbot no longer responds with blank messages.</li>
+                <li>Word wrap has been implemented for the message box, making the messages typed by users more
+                    readable.
+                </li>
+                <li>There is now a popup message prompting the user to ask a question to the chatbot. As well, there is
+                    an
+                    initial message introducing the chatbot.</li>
+            </ul>
+            <h4 id="known-issues-">Known Issues:</h4>
+            <p>The following are known issues we have discovered but have not fixed in this current version:</p>
+            <h5 id="chatbot">Chatbot</h5>
+            <ul>
+                <li>Chatbot is overtuned to only respond to questions about onboarding. May not respond to greetings
+                    like
+                    &quot;hello&quot; when it should be expected to.</li>
+                <li>Response times for the chatbot are still being improved.</li>
+                <li>Chatbot settings are not implemented. There is a placeholder white box.</li>
+            </ul>
+            <h5 id="admin-panel">Admin Panel</h5>
+            <ul>
+                <li>Broken or empty links in the login page</li>
+                <li>&quot;Continue With Admin Login&quot; possible with empty username in login page</li>
+                <li>&quot;User Ratings&quot; page is not configured</li>
+                <li>&quot;Chat Sessions&quot; page is not configured</li>
+                <li>API hookup is not fully complete</li>
+            </ul>
+        </div>
+
+        <div id="v0.2.0">
+            <h3 id="version-0-2-0">Version 0.2.0</h3>
+            <h4 id="revamped-chatbot-ui-">Revamped Chatbot UI:</h4>
+            <p>We have greatly improved the style of our chatbot to make it more appealing and to make it more clear to
+                the
+                user
+                that they are interacting with a chatbot. We have also added UI elements with placeholders for upcoming
+                features. </p>
+            <p>Changes:</p>
+            <ul>
+                <li>Added initial message introducing the chatbot</li>
+                <li>Fixed send button not receiving a response from chatbot</li>
+                <li>Modernized the user interface by introducing color gradients and including a Coast Companion avatar
+                    beside
+                    all chatbot messages</li>
+                <li>Added a chatbot header that includes the Coast Companion icon, name, and online status.</li>
+                <li>Added settings cog icon to toggle a dropdown menu (this menu will include options for font size
+                    changes
+                    in a
+                    future update)</li>
+                <li>Added three dots below every chat message to display links to the sources used in the chatbot answer
+                    (working links will be included in a future update)</li>
+            </ul>
+            <h4 id="admin-panel-accounts-">Admin Panel Accounts:</h4>
+            <p>We have implemented admin accounts using Amazon Cognito. This will allow us to have multiple admin users
+                and
+                manage accounts through AWS. Having Amazon Cognito accounts allows us to have individual credentials for
+                database and knowledge base access which allows us to audit changes made by admins to the knowledge
+                base.
+            </p>
+            <p>Changes:</p>
+            <ul>
+                <li>Connected login page to Amazon Cognito</li>
+                <li>Created two admin accounts <ul>
+                        <li>Username: admin | Password: Password@1</li>
+                        <li>Username: TestAdmin | Password: Testing@2</li>
+                    </ul>
+                </li>
+                <li>Set up protected routes to block access to pages without logging in</li>
+            </ul>
+            <h4 id="stronger-chatbot-model-">Stronger Chatbot Model:</h4>
+            <p>We have strengthened our chatbot model to improve reliability. We have made various changes to reduce
+                hallucinations and return more accurate response times. </p>
+            <p>Changes:</p>
+            <ul>
+                <li>Confined responses to CCS related responses only</li>
+                <li>Improved Knowledge base look up</li>
+                <li>Improved response coherency</li>
+                <li>Responds to ambiguous responses in context of CCS</li>
+                <li>Gave model context so it can understand that it is a chatbot for CCS</li>
+            </ul>
+            <h4 id="known-issues-">Known Issues:</h4>
+            <p>The following are known issues we have discovered but have not fixed in this current version:</p>
+            <ul>
+                <li>Chatbot is overtuned to only respond to questions about onboarding. May not respond to greetings
+                    like
+                    &quot;hello&quot; when it should be expected to.</li>
+                <li>Response times for the chatbot are still being improved. </li>
+            </ul>
+        </div>
+    </div>
+</div>
