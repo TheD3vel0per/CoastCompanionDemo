@@ -1,6 +1,4 @@
 (function (embedUrl, defaultHidden, buttonColor, showToggleBtnPrompt) {
-(function (embedUrl, defaultHidden, buttonColor, showToggleBtnPrompt) {
-
     // Insert iFrame into the Page
     var iframe = document.createElement('iframe');
     iframe.src = embedUrl;
