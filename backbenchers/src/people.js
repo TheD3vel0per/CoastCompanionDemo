@@ -29,10 +29,10 @@ export const developmentTeam = [
     },
     {
         name: "Peter Newman",
-        roles: [],
+        roles: ["Documentation, Testing"],
         pictureLink: "",
-        websiteLink: "",
-        linkedInLink: "",
+        websiteLink: "https://www.penumen.com/",
+        linkedInLink: "https://www.linkedin.com/in/peter-newman/",
     },
     {
         name: "Vihara Jayaweera",
