@@ -40,7 +40,7 @@ const ProfileCard = ({ name, pictureLink, roles, websiteLink, linkedInLink }) =>
       <div className={styles.profileImageContainer}>
         <img src={pictureLink} alt={"Profile Image for " + name} className={styles.profileImage} />
       </div>
-      <h3>{name}</h3>
+      <h3 className={styles.name}>{name}</h3>
       <div className={styles.roleContainer}>
         {chips}
       </div>

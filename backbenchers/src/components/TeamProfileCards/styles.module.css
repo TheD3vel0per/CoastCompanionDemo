@@ -135,7 +135,7 @@ h2 {
   gap: 10px;
 }
 
-h3 {
+.name {
   font-family: "Coast Sans";
   font-size: 1rem;
   text-align: center;

@@ -1,0 +1,92 @@
+---
+sidebar_position: 2
+---
+
+# Technical Design Overview
+
+:::warning
+This page serves as a reference based on the official **Technical Design** document shared with our stakeholders. To accommodate the format here, some modifications may have been made from the original document.
+
+**Please consider this page for reference purposes only.** Updates to reflect changes in the official project documentation may not be immediate. In instances of discrepancies between this page and the officially submitted documents, the officially submitted documents should be regarded as the accurate source.
+:::
+
+This page outlines the technical blueprint for the Coast Companion chatbot during its development stages. Its aim is to break down the technical design architecture and strategy to address design-related challenges that might arise during the implementation of the Coast Companion software. It acts as a guide for all teams regarding code structure design and internal Application Protocol Interface (API) usage. Further, it should be noted that this page is dynamic and subject to updates, including potential additions to APIs as the project progresses.
+
+## Goals and Objectives
+
+The goal for Coast Companion is to develop an intuitive chatbot that is capable of assisting employees with business functions. Ideally, the chatbot will be extensible and trained for other purposes, but the initial product will be trained to answer questions related to onboarding. The Minimal Viable Product will be a web-based, AI-based chatbot assistant using Amazon Web Services (AWS). Ideally, it will be capable of clarifying its questions to offer a more refined answer. Users are able to rate the answers, and these ratings are stored in Amazon Relational Database Service (RDS) where it can be accessed via the Admin Panel. There, it can be used to refine and adjust the model as needed. The chatbot should also be capable of being continually updated, storing the most up-to-date documents in AWS Simple Storage Service (S3). Administrators will be capable of adding new documentation, and to ensure complete transparency, logs of such actions will be recorded in Amazon RDS.
+
+## Assumptions
+
+We describe the assumptions made for the solution’s usual production environment. It is a web-based application designed specifically for use on devices other than tablets and smartphones. It is intended to support up to five simultaneous administrators and accommodate up to 100 concurrent end-users. The system is expected to source data from the public domain. It is important to note that privacy and governance aspects are not explicitly addressed in the current specifications, primarily as this is a first iteration product. The primary user base for this application consists of Coast Capital Savings (CCS) internal users, with a specific focus on staff onboarding processes.
+
+## Tools and Environment
+
+Our tools and environment are chosen with Agile development practices in mind to allow a collaborative and synchronized development process across the various teams of the group. To ensure synchronized communication across all teams within the group, Discord serves as the standardized platform for team and cross-team group communications.
+
+### Development Environment
+
+The back-end will be developed in Node.js LTS 20.11.0, with npm 10.4.0 for package management, both being the latest LTS versions (at the time of writing) with the latest features, enabling seamless integration of the two. Developers will have the flexibility to choose between Visual Studio Code and PyCharm as their integrated development environment (IDE), accommodating individual preferences. Further, version control will be streamlined through GitHub. GitHub will also be used to meticulously track the project’s workflow. Unified Modeling Language (UML) class diagrams are to be crafted using draw.io, a lightweight, free web-based diagramming tool. Draw.io is also compatible with PlantUML, which allows for easy code generation of UML diagrams.
+
+The front-end setup revolves around two main workflows: the chatbot and the administrator panel. The chatbot is integrated into an iFrame via a simple JavaScript script that can be added to any Hypertext Markup Language (HTML) page. This setup also loads the necessary Cascading Style Sheets (CSS) for the chatbot, making it easy to incorporate chatbot functionality into existing web pages and empowering quick updates in the future. On the other hand, the admin panel stands alone as a separate web page. The front-end development team utilizes Amplify V6, which combines React 18.2.0 and CSS for building interfaces. Version control, tracking, and issue reporting are managed through GitHub.
+
+The ML environment will be powered by AWS Command Line Interface (CLI), a unified tool that provides an interface for interacting with all parts of AWS. The AWS CLI will be used to configure AWS Bedrock, which hosts a selection of large language models from which we will use the Llama2 model, as it is optimized for dialogue-use cases. The foundation model will also be fine-tuned and validated with data from S3, which will maintain all the data that will be used by the model.
+
+### Production and Test Environments
+
+We will have three separate environments; Development, Staging, and Production. All environments will operate within the framework of AWS, leveraging a suite of AWS services tailored to capture the diverse technologies essential to our operations. The development environment will serve as a place to create new features and components. Once these new additions are finalized, the staging environment will be used to practice deployment and test the code to ensure it is robust. If testing is successful, the feature will enter the production environment where it is available for end-users.
+
+At the forefront, AWS Amplify will support our dynamic front-end web pages. This front-end will interface with our AWS Lambda back-end via Amazon’s API Gateway. The delineation of permissions between user and admin interfaces will be intricately managed using Identity and Access Management (IAM) roles and permissions for a reliable access control mechanism.
+
+Within the back-end infrastructure, Amazon RDS will serve as the relational database solution. Further, S3 will be used for file storage to maintain a repository of information used by our language models. The ML environments will be powered by Amazon Bedrock and the LLama2 model, which will interact with Kendra and S3 to facilitate the intelligent search and retrieval of relevant information.
+
+Front-end and back-end development will move into the staging environment when code is pushed to feature branches. We will be using GitHub actions to trigger unit and integration tests when branches are pushed to. The back-end will also be tested using a testing suite in the Amazon API Gateway console. To test adjustments and changes made to the ML model, we will use the testing features offered by Amazon Bedrock. For system testing among the front-end, back-end, and language model, we will use Cypress 13.6.4.
+
+Only feature branches that have passed testing can enter the production environment and be merged into the main branch. For the back-end, cron jobs will also be implemented for periodic “clean up” tasks with AWS CloudWatch and Lambda.
+
+## Workflows
+### Program Hierarchy
+
+Workflows refer to the structured integration of resources and services designed to accomplish particular functions within an application. In our system, we have three specific workflows: Chatbot, Admin Panel, and the Crawler. The chatbot is the core workflow of our application, integrating seamlessly with other workflows. As the most frequently used component, it drives user interaction and functionality, making it the central hub for data integration and user engagement. The admin panel workflow offers a dedicated area for administrators to effectively handle training data, ensuring optimal performance of our application. Finally, the crawling module plays a vital role in updating our model with the newest resources uploaded by administrators by using S3 as the chatbot’s centralized knowledge base while also converting unstructured data into a format compatible with Kendra and other AWS services that use Kendra’s indexed data.
+
+### Chatbot Design
+
+The chatbot will be embedded within an iFrame that can be effortlessly incorporated into any HTML page using a straightforward JavaScript script. This script will also handle the loading of the necessary CSS stylesheets for the chatbot's appearance. This method offers a convenient solution for integrating chatbot functionality into pre-existing webpages. When users enter text queries, they will be transmitted to the back-end as properly formatted requests for processing by the models.
+
+To facilitate searching within the current session's chat, a search algorithm will be implemented using standard-library JavaScript string search methods locally on the client-side. This will ensure that users can easily access and navigate through the current session's chat history.
+
+Our chatbot workflow and its associated resources are highlighted in blue.
+
+### Admin Panel Design
+
+The admin panel enables administrators to perform various operational tasks. When administrators initiate actions such as viewing user chats, fetching performance metrics, accessing file metadata, adding new data, or viewing, updating, or deleting existing data, the admin panel sends the corresponding requests to the back-end via API Gateway. This triggers the specific Lambda function tailored to handle each task. By utilizing the serverless architecture of Lambda functions, the system ensures fast and scalable processing of requests. These Lambda functions then retrieve the required data and send it back to the admin panel through API Gateway, enabling real-time access to crucial information. This streamlined process improves the responsiveness of the admin panel, empowering administrators to efficiently manage and optimize the chatbot system.
+
+Our chatbot workflow and its associated resources are highlighted in orange.
+
+### Crawler Design
+
+Our crawler microservice plays a pivotal role in our data pipeline, executing a series of essential tasks. Firstly, it crawls and retrieves specific records in the system. Following the retrieval process, the microservice engages in thorough processing and text extraction, undertaking any necessary pre-processing actions to refine the data. Once this processing is complete, the microservice transfers the refined data to the S3 bucket.
+
+## Tradeoffs and Risks
+
+The implementation of a chatbot leveraging AWS infrastructure presents several risks that must be carefully managed throughout the project lifecycle.
+
+### System Architecture
+
+A tradeoff lies in the frequency of API calls. When designing software systems that interact with external APIs, developers must carefully consider the tradeoff between making frequent API calls for real-time updates and minimizing these calls for efficiency and cost-effectiveness. A higher frequency of API calls can provide users with up-to-date information and a more responsive experience. However, it can also increase server load, consume more network bandwidth, and potentially incur additional costs. Balancing these considerations is crucial for optimizing both the performance and scalability of the application while ensuring cost-effectiveness in the long run.
+
+### Front-End Stack
+
+While the chosen Amplify/React stack simplifies initial development, it may introduce overhead and version mismatching when making significant changes in the future. Opting for a specific technology stack like Amplify and React can offer a streamlined development process with pre-built components, extensive documentation, and a supportive community. However, as the project evolves and requirements change, the initial technology choices may present limitations or compatibility issues with new features or updates. This could result in increased development time and effort spent on resolving conflicts, refactoring code, or adapting to newer versions of frameworks and libraries. Thus, while the initial simplicity of the chosen stack is advantageous, it's essential to anticipate and mitigate potential challenges that may arise as the project grows and evolves over time.
+
+### Data Storage
+
+Lastly, depending on usage patterns and data retention policies, higher storage costs may accrue from storing unnecessary chat history. Storing chat histories can give admins the opportunity to revisit prior conversations and enable our system to learn more from communication patterns with users. However, retaining excessive or unnecessary chat data can lead to inflated storage costs, especially when dealing with large volumes of messages or multi-media content. To optimize storage usage and reduce expenses, efficient data retention policies that balance the need for historical data with storage constraints and budgetary considerations must be considered. This will involve implementing features such as message archiving, automatic deletion of outdated content, or offering users control over their data retention preferences. By carefully managing chat history storage, developers can ensure cost-effective operations while still meeting the needs of users and compliance requirements.
+
+### Testing
+
+Additionally, in deciding between implementing more functionality with quicker testing periods versus focusing primarily on in-scope tasks with extensive testing, there exists a critical risk-tradeoff. With the project’s shorter development cycle, there is a risk of not completing all desired tasks and stretch goals within the given timeframe. To mitigate this risk, the emphasis can be shifted towards development efforts, prioritizing the rapid creation of functionalities over exhaustive testing. However, this approach compromises the thoroughness of testing, potentially leading to an increased likelihood of undetected bugs in the final product. Conversely, prioritizing correctness and reliability through extensive testing ensures that the implemented features are robust and reliable. Although this approach may result in fewer stretch goals met, it reduces the probability of encountering critical issues post-deployment.
+
+### Risks of Not Meeting Requirements
+
+As a predominantly user-centered program, the requirements are meant to provide a reliable and user-friendly experience. The requirements include accommodating 100 concurrent users and multiple admin users. As this program is intended to be scaled to an even larger concurrent user base, this shortfall could significantly degrade the overall user experience and place future development efforts in jeopardy. Failure to satisfy admin requirements could impede the enhancement or integration of AI and ML models, limiting the product's adaptability. Inadequately designed code and product architecture can lead to diminished performance and reduced user satisfaction. The requirements outline the basic functionalities, and without meeting the aforementioned functionalities, Coast Companion will not be a working and usable chatbot. Thus, not meeting the requirements is the largest risk, and completion of these requirements is of the highest priority for the group.
