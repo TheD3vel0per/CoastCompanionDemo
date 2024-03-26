@@ -62,7 +62,7 @@ const TeamProfileCards = () => {
         </div>
         <div className={styles.sponsorDescriptionContainer}>
           <p className={styles.representativeName}>Representative: Jason Hikida</p>
-          <p className={styles.sponsorDescription}>As the sponsor of this project, Coast Capital aims to leverage data, analytics, and AI/ML technologies to improve the member experience and accelerate their vision to unlock financial oppertunities that positivley impact people and communities.</p>
+          <p className={styles.sponsorDescription}>As the sponsor of this project, Coast Capital aims to leverage data, analytics, and AI/ML technologies to improve member experience and accelerate their vision to unlock financial oppertunities that positivley impact people and communities.</p>
         </div>
       </div>
       <h2>Course Team</h2>
