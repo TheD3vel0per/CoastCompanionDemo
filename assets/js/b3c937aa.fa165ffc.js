@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkbackbenchers=self.webpackChunkbackbenchers||[]).push([[7154],{7983:a=>{a.exports=JSON.parse('{"label":"team","permalink":"/CoastCompanionDemo/blog/tags/team","allTagsPath":"/CoastCompanionDemo/blog/tags","count":2,"unlisted":false}')}}]);
