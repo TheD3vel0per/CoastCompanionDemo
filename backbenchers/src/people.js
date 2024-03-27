@@ -43,16 +43,16 @@ export const developmentTeam = [
     },
     {
         name: "Dabin Im",
-        roles: [],
-        pictureLink: "",
-        websiteLink: "",
+        roles: ["Frontend", "Backend"],
+        pictureLink: "https://avatars.githubusercontent.com/u/112664372?v=4",
+        websiteLink: "/CoastCompanionDemo/blog/dabin",
         linkedInLink: "",
     },
     {
         name: "Matthew Kang",
-        roles: ["Admin Panel", "Front End & API"],
+        roles: ["Admin Panel", "Frontend & API"],
         pictureLink: "",
-        websiteLink: "",
+        websiteLink: "/CoastCompanionDemo/blog/matthew",
         linkedInLink: "https://www.linkedin.com/in/kang-matt/",
     },
     {

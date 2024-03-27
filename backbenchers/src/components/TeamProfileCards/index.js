@@ -21,7 +21,7 @@ const ProfileCard = ({ name, pictureLink, roles, websiteLink, linkedInLink }) =>
   } else {
     chips = <>{
       roles.map((role) => (
-        <Chip key={role} label={role} className={styles.roleChip} sx={{color: "var(--black-or-white)"}} />
+        <Chip key={role} label={role} size="small" className={styles.roleChip} sx={{color: "var(--black-or-white)"}} />
       ))
     }
     </>
