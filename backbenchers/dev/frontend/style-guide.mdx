@@ -1,0 +1,83 @@
+---
+sidebar_position: 3
+---
+
+
+
+# Frontend Style Guide (React/TSX)
+
+:::note[Internal Documentation]
+
+This document is an internal documentation of **The Backbenchers**, created for the **Coast Companion** project. This document is published for supplimentary purposes only, and information listed on this document many be constantly updating and its accuracy cannot be gueranteed.
+
+:::
+
+The **Coast Companion Front-End React/TSX Style Guide** for is limited to large or medium scale React components like the Admin Panel. The style guide is not enforced for the Chatbot component of Coast Companion.
+
+## Acknowledgements
+The **Coast Companion React/TSX Style Guide** is heavily based on the [Airbnb React/JSX Style Guide](https://airbnb.io/javascript/react/) and the [Google TypeScript Style Guide](https://google.github.io/styleguide/tsguide.html). Considering the scope of this project compared to projects at Airbnb and Google, the guide may not be as thorough, and other consistent styles may have been adopted after a front-end meeting, without it being documented on this document. Many other elements of the guide that were not adopted from Airbnb and Google's guide are Coast Companion project-specific.
+
+## Basic Rules
+  - Only include one React component per file.
+    - However, multiple [Stateless, or Pure, Components](https://facebook.github.io/react/docs/reusable-components.html#stateless-functions) are allowed per file. eslint: [`react/no-multi-comp`](https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/no-multi-comp.md#ignorestateless).
+  - Always use JSX syntax.
+  - Do not use `React.createElement` unless you’re initializing the app from a file that is not JSX.
+  - [`react/forbid-prop-types`](https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/forbid-prop-types.md) will allow `arrays` and `objects` only if it is explicitly noted what `array` and `object` contains, using `arrayOf`, `objectOf`, or `shape`.
+
+## Functional Components over Class Components
+
+**Components should be defined as functional components.** With the introduction of Hooks in React 16.8, functional components can have states. Functional components are more intuitive, and there is nothing a functioanl component cannot do that a Class Component could do.
+
+
+```tsx
+interface ListingProps {
+  // props for listing
+}
+
+interface ListingState {
+  hello: string;
+}
+
+// bad - functional components should not use state
+function Listing({ hello, state }: ListingProps) {
+  return <div>{hello}</div>;
+}
+
+// good
+class Listing extends React.Component<ListingProps, ListingState> {
+  state: ListingState = {
+    hello: "world",
+  };
+
+  render() {
+    return <div>{this.state.hello}</div>;
+  }
+}
+
+```
+
+And if you don’t have state or refs, prefer normal functions (not **arrow functions**) over classes:
+
+```tsx
+// bad because there's no explicit type definition
+class Rating extends React.Component<{ hello: string }> {
+  render() {
+    return <div>{this.props.hello}</div>;
+  }
+}
+
+// bad (relying on function name inference is discouraged and might have implications in debugging and testing)
+const Rating = ({ hello }: { hello: string }) => (
+  <div>{hello}</div>
+);
+
+// good
+interface ListingProps {
+  hello: string;
+}
+
+function Listing({ hello }: ListingProps) {
+  return <div>{hello}</div>;
+}
+
+```
