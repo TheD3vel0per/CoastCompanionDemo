@@ -19,6 +19,6 @@ const presetAvailabilityMessages = {
 // Set as...
 // export const availabilty = null; // for when the app is running (no message displayed)
 // export const availabilty = presetAvailabilityMessages["db"]; // for when the database is down
-export const availabilty = presetAvailabilityMessages["db"];
+export const availabilty = null;
 
 
