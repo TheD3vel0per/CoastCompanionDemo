@@ -10,7 +10,7 @@ import Modal from '@mui/material/Modal';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import version from "../../version"
+import { version, availabilty } from '@site/src/version';
 
 
 
@@ -128,6 +128,10 @@ export default function HomepageFeatures() {
   return (
     <section className={styles.features}>
       <div className="container" id="demo-container">
+
+        {availabilty && <Admonition type="warning" title="Service Notice">
+          <b>{availabilty}</b>
+        </Admonition>}
 
         <Admonition type="info" title="new release!">
           <p>Pre-Release Version {preReleaseVersion} has been released. For more information, please refer to the <Link to={`/dev/release-notes/${preReleaseVersion}`}>Release Notes</Link></p>
