@@ -1,0 +1,89 @@
+---
+sidebar_position: 3
+---
+
+
+
+# Frontend Style Guide (React/TSX)
+
+:::note[Internal Documentation]
+
+This document is an internal documentation of **The Backbenchers**, created for the **Coast Companion** project. This document is published for supplimentary purposes only, and information listed on this document many be constantly updating and its accuracy cannot be gueranteed.
+
+:::
+
+The **Coast Companion Front-End React/TSX Style Guide** for is limited to large or medium scale React components like the Admin Panel. The style guide is not enforced for the Chatbot component of Coast Companion.
+
+## Acknowledgements
+The **Coast Companion React/TSX Style Guide** is heavily based on the [TypeScript Style Guide](https://github.com/mkosir/typescript-style-guide?tab=MIT-1-ov-file) by Marko Kosir, 
+[Airbnb React/JSX Style Guide](https://airbnb.io/javascript/react/) and the [Google TypeScript Style Guide](https://google.github.io/styleguide/tsguide.html). Considering the scope of this project compared to projects at Airbnb and Google, the guide may not be as thorough, and other consistent styles may have been adopted after a front-end meeting, without it being documented on this document. Many other elements of the guide that were not adopted from Airbnb and Google's guide are Coast Companion project-specific.
+
+### License
+```
+MIT License
+
+Copyright (c) 2022 mkosir
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+## Basic Rules
+  - Use JSDoc, TSDoc, or TypeDoc compatible comments (in-file documentation) to document every file, function, types/interfaces, modules, mutable variables, constants, hooks, etc.
+    - **Why** a piece of code exists or why it was implemented in a certain way.
+    - **How** to use the code, including examples if appropriate.
+    - **What** the code does at a high level, especially for complex logic that isn't immediately clear from the code itself.
+  - Only include one React component per file.
+    - However, for small components where it is the only use-case, include it in the bottom of the main component being exported.
+    - This rule does not apply for config files or util files.
+  - Always use TSX syntax. **Always** use Functional Components over Class Components.
+    - With the introduction of Hooks in React 16.8, functional components can have states. Functional components are more intuitive, and there is nothing a functioanl component cannot do that a Class Component could do.
+  - Don't ignore ESLint.
+
+## Naming Conventions
+- lowerCamelCase for component file names and directory names
+- PascalCase for functional component names
+- lowerCamelCase for variable, constants, and state names
+  - booleans must start with ``is`` or ``has`` prefix
+- SCREAMING_SNAKE_CASE for global configuration constants
+
+## Arrow Functions over Function Declearation
+Use arrow functions (first class anonymous functions) over function declaration like ``function() {...}``. 
+
+## Directory Structure
+
+The directory structure follows the [Bulletproof React](https://github.com/alan2207/bulletproof-react/blob/master/docs/project-structure.md) guide for project structure.
+
+### Summary
+- All features should go into the features directory
+  - Features include things like pages, or things that hold multiple domains of states, or other stuff
+  - The feature directories all have their own (local) component direcotry
+- All components that are shared should be going into the (global) component directory
+  - Components must be used by features, and they must be shraed if they are going into the shared directory
+
+### Path Aliases
+Path Aliases are defined to be used in imports. Never use relative path over absolute path aliases. They are defined as below:
+
+```json
+"paths": {
+  "@shared-components/*": ["./components/*"],
+  "@images/*": ["./assets/images/*"],
+  "@fonts/*": ["./assets/fonts/*"],
+  "@features/*": ["./features/*"],
+}
+```
