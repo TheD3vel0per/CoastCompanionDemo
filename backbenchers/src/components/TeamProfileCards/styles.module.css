@@ -3,7 +3,7 @@
   flex-wrap: wrap;
   gap: 20px;
   align-items: center;
-  justify-content: center; 
+  justify-content: center;
   padding: 20px;
   background-color: var(--feature-card-bg-color);
   border-radius: 10px;
@@ -16,10 +16,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; 
+  justify-content: center;
   width: 100%;
   padding: 20px;
-  background-color: var(--feature-card-bg-color); 
+  background-color: var(--feature-card-bg-color);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin: 10px;
@@ -51,12 +51,11 @@
     flex-direction: column;
     align-items: center;
   }
-  
+
   .coastLogoContainer {
     width: 100%;
     flex: 3;
   }
-
 
 }
 
@@ -82,6 +81,13 @@ h2 {
   width: 100%;
   height: auto;
   border-radius: 10px;
+}
+
+.backbenchersLogo {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transform: rotate(0.5deg);
 }
 
 .coastLogoContainer {

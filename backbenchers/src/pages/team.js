@@ -14,7 +14,9 @@ function Hero() {
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
-        <p className={styles.heroBannerTitle}>The BackBenchers - developers of CoastCompanion</p>
+        <div className={styles.heroBannerTitle}>
+          The BackBenchers - developers of CoastCompanion
+        </div>
       </div>
     </header>
   );

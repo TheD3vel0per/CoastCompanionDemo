@@ -13,15 +13,15 @@ const ProfileCard = ({ name, pictureLink, roles, websiteLink, linkedInLink }) =>
   }
 
   if (pictureLink === undefined || pictureLink === null || pictureLink === "") {
-    pictureLink = "/CoastCompanionDemo/img/ubc-logo.png";
+    pictureLink = "/CoastCompanionDemo/img/backbenchers-logo.png";
   }
 
-  let chips = <>{<Chip label="Backbencher" sx={{color: "var(--ifm-color-primary-light)"}}/>}</>;
+  let chips = <>{<Chip label="Backbencher" sx={{ color: "var(--ifm-color-primary-light)" }} />}</>;
   if (!roles || roles.lengh === 0) {
   } else {
     chips = <>{
       roles.map((role) => (
-        <Chip key={role} label={role} size="small" className={styles.roleChip} sx={{color: "var(--black-or-white)"}} />
+        <Chip key={role} label={role} size="small" className={styles.roleChip} sx={{ color: "var(--black-or-white)" }} />
       ))
     }
     </>
@@ -55,6 +55,16 @@ const ProfileCard = ({ name, pictureLink, roles, websiteLink, linkedInLink }) =>
 const TeamProfileCards = () => {
   return (<>
     <div className={styles.profileAreaContainer}>
+      <h2>One Team. One Dream. One Chatbot.</h2>
+      <div className={styles.sponsorCard}>
+        <div className={styles.coastLogoContainer}>
+          <img src="/CoastCompanionDemo/img/backbenchers-logo.png" alt="Coast Capital Savings Logo" className={styles.backbenchersLogo} />
+        </div>
+        <div className={styles.sponsorDescriptionContainer}>
+          <p className={styles.representativeName}>Team Backbenchers</p>
+          <p className={styles.sponsorDescription}> We, the Backbenchers team consisting of Abhigyan Dabla, Dabin Im, Devam Sisodraker, Jonathan Qiao, Mattias Sebanc, Matthew Kang, Melanie Kent, Peter Newman, Phillips Ng, Vihara Jayaweea, have a dream of developing a compliance-oriented, secure, scalable chatbot... And we have delivered!</p>
+        </div>
+      </div>
       <h2>Sponsor</h2>
       <div className={styles.sponsorCard}>
         <div className={styles.coastLogoContainer}>
