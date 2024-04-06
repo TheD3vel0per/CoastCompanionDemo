@@ -5,7 +5,7 @@
 // put the newest deployed version here
 // in "0.x.x" format
 
-export const version = "0.6.0"
+export const version = "0.7.0"
 
 // This section is for when the app is not running (down) and not running to 
 // the latest released version. This will be used to display a message on the front end
