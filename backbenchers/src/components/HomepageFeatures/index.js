@@ -11,6 +11,7 @@ import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { version, availabilty } from '@site/src/version';
+import { TeamPictureSlideshow } from '@site/src/components/TeamPictureSlideshow';
 
 
 
@@ -162,7 +163,6 @@ export default function HomepageFeatures() {
               <AdminPanelModalButton />
             </div>
           </div>
-
         </div>
       </div>
     </section>

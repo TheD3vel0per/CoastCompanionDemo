@@ -5,6 +5,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import LinkIcon from '@mui/icons-material/Link';
 import Link from '@mui/material/Link';
 import { courseTeam, developmentTeam } from "../../people";
+import { TeamPictureSlideshow } from '../TeamPictureSlideshow';
 
 const ProfileCard = ({ name, pictureLink, roles, websiteLink, linkedInLink }) => {
 
@@ -55,16 +56,23 @@ const ProfileCard = ({ name, pictureLink, roles, websiteLink, linkedInLink }) =>
 const TeamProfileCards = () => {
   return (<>
     <div className={styles.profileAreaContainer}>
+
       <h2>One Team. One Dream. One Chatbot.</h2>
-      <div className={styles.sponsorCard}>
-        <div className={styles.coastLogoContainer}>
-          <img src="/CoastCompanionDemo/img/backbenchers-logo.png" alt="Coast Capital Savings Logo" className={styles.backbenchersLogo} />
+
+      <div className={styles.bbCard}>
+        <div className={styles.bbSlides}>
+          <TeamPictureSlideshow props={"30%"} />
         </div>
         <div className={styles.sponsorDescriptionContainer}>
-          <p className={styles.representativeName}>Team Backbenchers</p>
-          <p className={styles.sponsorDescription}> We, the Backbenchers team consisting of Abhigyan Dabla, Dabin Im, Devam Sisodraker, Jonathan Qiao, Mattias Sebanc, Matthew Kang, Melanie Kent, Peter Newman, Phillips Ng, Vihara Jayaweea, have a dream of developing a compliance-oriented, secure, scalable chatbot... And we have delivered!</p>
+          <div style={{display: "block", gap: 0, justifyContent: "right"}}>
+            <p className={styles.bbPrefix}>About the</p>
+            <p className={styles.bbName}>Team Backbenchers</p>
+          </div>
+          <p className={styles.bbDescription}>We don't just dream about developing a compliance-oriented, secure, scalable chatbot, <span style={{fontSize: "1.15em", color: "var(--ifm-color-primary)"}}>we built one.</span> </p>
+          <p className={styles.bbDescriptionThree}>Through Coast Companion, we deliver compliance-oriented, secure, and scalable real solutions to financial challenges, ensuring every interaction is personalized and protected. It's about empowering members to make informed decisions for a better life, backed by a chatbot designed with their security and evolving needs in mind.</p>
         </div>
       </div>
+
       <h2>Sponsor</h2>
       <div className={styles.sponsorCard}>
         <div className={styles.coastLogoContainer}>

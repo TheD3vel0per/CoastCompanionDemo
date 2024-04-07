@@ -11,6 +11,55 @@
   margin: 10px;
 }
 
+.bbCard {
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  padding: 20px;
+  background-color: var(--feature-card-bg-color);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+}
+
+.bbSlides {
+  width: 50%;
+}
+
+.bbPrefix {
+  font-family: "Coast Sans";
+  font-size: 1rem;
+  color: var(--ifm-color-primary);
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.bbName {
+  font-size: 2.25rem;
+  font-family: "Coast Sans";
+  color: var(--black-or-white);
+  margin-top: 0px;
+  padding-top: 0;
+}
+
+.bbDescription {
+  font-size: 1rem;
+  font-family: "Coast Sans";
+  color: var(--ifm-color-primary-lighter);
+}
+
+.bbDescriptionTwo {
+  font-size: 1.15rem;
+  font-family: "Coast Sans";
+  color: var(--ifm-color-primary);
+}
+
+.bbDescriptionThree {
+  font-size: 0.85rem;
+  font-family: "Coast Sans";
+  color: var(--ifm-color-primary);
+}
 
 .profileCard {
   display: flex;
@@ -43,11 +92,20 @@
     width: 100%;
   }
 
+  .bbSlides {
+    width: 95%;
+  }
+
   .profileCardContainer {
     grid-template-columns: repeat(2, 1fr);
   }
 
   .sponsorCard {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .bbCard {
     flex-direction: column;
     align-items: center;
   }
@@ -62,6 +120,10 @@
 @media (max-width: 480px) {
   .profileCard {
     width: 100%;
+  }
+
+  .bbSlides {
+    width: 95%;
   }
 
   .profileCardContainer {

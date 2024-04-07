@@ -15,7 +15,7 @@ function Hero() {
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
         <div className={styles.heroBannerTitle}>
-          At the Backbencers, we’re not dreaming of developing a compliance-oriented, secure, and scalable chatbot, we're building one.
+          At the Backbencers, we’re not dreaming of developing a compliance-oriented, secure, and scalable chatbot, we built one.
         </div>
       </div>
     </header>
