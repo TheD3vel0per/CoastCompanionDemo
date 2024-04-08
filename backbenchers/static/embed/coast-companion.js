@@ -26,6 +26,7 @@
     toggleBtn.onclick = function () {
         hidden = !hidden;
         alert.style.display = 'none';
+        closeAlert.style.display = "none";
         iframe.style.display = hidden ? 'none' : 'block';
         toggleBtn.style.borderColor = buttonColor;
         toggleBtn.style.borderLeftColor = buttonColor;
@@ -49,6 +50,7 @@
     toggleBtn.style.color = 'white';
     document.body.appendChild(toggleBtn);
 
+
     window.addEventListener('message', function (event) {
         if (event.origin !== embedUrl) {
             return;
@@ -66,23 +68,45 @@
 
     var alert = document.createElement('div');
     alert.style.display = showToggleBtnPrompt? 'flex' : none;
-    alert.innerHTML = 'Click here to ask me a question!';
+    alert.innerHTML = 'Hello! &#128075; Click here to ask me a question!';
 
-    alert.style.boxShadow = "rgba(22, 91, 239, 0.2) 0px 4px 8px";
+    alert.style.boxShadow = "rgba(22, 91, 239, 0.4) 0px 4px 8px";
     alert.style.backgroundColor = '#FFFFFF';
     alert.style.color = "black"
 
     alert.style.position = 'fixed';
-    alert.style.bottom = '20px';
-    alert.style.right = '80px';
-    alert.style.borderRadius = '10px';
+    alert.style.bottom = '40px';
+    alert.style.right = '70px';
+    alert.style.borderRadius = '8px';
     alert.style.paddingBlock = '0.5em 0.5em';
     alert.style.paddingInline = '1.5em 1.5em';
     alert.style.inline = '1.5em 1.5em';
-    alert.style.width = '10%';
+    alert.style.width = '220px';
     alert.style.justifyContent = 'center';
     alert.style.alignItems = 'center';
     document.body.appendChild(alert);
 
+    var closeAlert = document.createElement('button');
+    closeAlert.style.display = showToggleBtnPrompt? 'flex' : none;
 
-})('https://chatbot.d2z99dzbnhjdr2.amplifyapp.com', true, '#007bff', true);
+    closeAlert.style.position = 'fixed';
+    closeAlert.style.bottom = '80px';
+    closeAlert.style.right = '65px';
+    closeAlert.style.width = "20px";
+    closeAlert.style.height = "20px";
+    closeAlert.style.backgroundColor = 'red';
+    closeAlert.style.color = "white";
+    closeAlert.style.justifyContent = "center";
+    closeAlert.style.alignItems = "center";
+    closeAlert.innerHTML = "x";
+    closeAlert.style.fontWeight = "600";
+    closeAlert.style.border = "none";
+    closeAlert.style.borderRadius = "20px";
+    closeAlert.style.opacity = "0.7";
+    closeAlert.onclick = function () {
+        alert.style.display = "none";
+        closeAlert.style.display = "none";
+    };
+    document.body.appendChild(closeAlert);
+
+})('http://localhost:3000', true, '#007bff', true);
