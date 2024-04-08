@@ -6,13 +6,27 @@ import { Paper, Button } from '@mui/material'
 
 export const TeamPictureSlideshow = (props) => {
 
-  var items = ["/CoastCompanionDemo/img/team/scream-toad.gif",
-    "/CoastCompanionDemo/img/team/scream-toad.gif",
-    "/CoastCompanionDemo/img/team/scream-toad.gif",
-    "/CoastCompanionDemo/img/team/scream-toad.gif",
-    "/CoastCompanionDemo/img/team/scream-toad.gif",
-    "/CoastCompanionDemo/img/team/scream-toad.gif",
-    "/CoastCompanionDemo/img/team/scream-toad.gif"]
+  var items = ["/CoastCompanionDemo/img/team/1.jpg",
+  "/CoastCompanionDemo/img/team/2.jpg",
+  "/CoastCompanionDemo/img/team/3.jpg",
+  "/CoastCompanionDemo/img/team/4.jpg",
+  "/CoastCompanionDemo/img/team/6.jpg",
+  "/CoastCompanionDemo/img/team/7.jpg",
+  "/CoastCompanionDemo/img/team/9.jpg",
+  "/CoastCompanionDemo/img/team/10.jpg",
+  "/CoastCompanionDemo/img/team/11.jpg",
+  "/CoastCompanionDemo/img/team/12.jpg",
+  "/CoastCompanionDemo/img/team/13.jpg",
+  "/CoastCompanionDemo/img/team/14.jpg",
+  "/CoastCompanionDemo/img/team/15.jpg",
+  "/CoastCompanionDemo/img/team/16.jpg",
+  "/CoastCompanionDemo/img/team/17.jpg",
+  "/CoastCompanionDemo/img/team/18.jpg",
+  "/CoastCompanionDemo/img/team/19.jpg",
+  "/CoastCompanionDemo/img/team/20.jpg",
+  "/CoastCompanionDemo/img/team/21.jpg",
+  "/CoastCompanionDemo/img/team/22.jpg",
+  "/CoastCompanionDemo/img/team/23.jpg"]
 
   return (
     <>
