@@ -135,7 +135,7 @@ export default function HomepageFeatures() {
         </Admonition>}
 
         <Admonition type="info" title="new release!">
-          <p>Pre-Release Version {preReleaseVersion} has been released. For more information, please refer to the <Link to={`/dev/release-notes/${preReleaseVersion}`}>Release Notes</Link></p>
+          <p>First Release Version {preReleaseVersion} has been released. For more information, please refer to the <Link to={`/dev/release-notes/${preReleaseVersion}`}>Release Notes</Link></p>
         </Admonition>
 
         <div className={styles.row}>
