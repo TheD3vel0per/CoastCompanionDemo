@@ -32,7 +32,8 @@ export const TeamPictureSlideshow = (props) => {
     <>
         <Carousel
           animation={"slide"}
-          indicators={false}>
+          indicators={false}
+          interval={1500}>
           {
             items.map((item, i) => <Item key={i} imgLink={item} imgHeight={props.imgHeight} />)
           }
