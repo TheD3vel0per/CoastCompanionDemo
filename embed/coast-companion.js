@@ -117,4 +117,4 @@
     };
     document.body.appendChild(closeAlert);
 
-})('http://localhost:3000', true, '#007bff', true);
+})('https://chatbot.d2z99dzbnhjdr2.amplifyapp.com', true, '#007bff', true);
