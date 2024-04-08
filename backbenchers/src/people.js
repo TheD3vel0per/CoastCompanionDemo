@@ -50,8 +50,8 @@ export const developmentTeam = [
     },
     {
         name: "Matthew Kang",
-        roles: ["Admin Panel", "Frontend & API"],
-        pictureLink: "",
+        roles: ["Admin Panel", "Frontend"],
+        pictureLink: "/CoastCompanionDemo/img/matthew-crop.jpg",
         websiteLink: "/CoastCompanionDemo/blog/matthew",
         linkedInLink: "https://www.linkedin.com/in/kang-matt/",
     },
